@@ -1,0 +1,9 @@
+2014-12-18 10:48:09,880 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:48:09,890 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,893 - INFO  - [Thread-0:TestTaskAssignment@115] - Starting master - Parallel
+2014-12-18 10:48:09,921 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2014-12-18 10:48:09,923 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,925 - INFO  - [Thread-2:TestTaskAssignment@196] - Starting master - ZooKeeper Crash
+2014-12-18 10:48:09,933 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2014-12-18 10:48:09,936 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,938 - INFO  - [Thread-3:TestTaskAssignment@38] - Starting master - Sequential

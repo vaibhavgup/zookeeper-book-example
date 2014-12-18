@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.zookeeper.book.TestAssignmentRecovery" time="16.251" tests="4" errors="4" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="24.65-b04"/>
+    <property name="user.country.format" value="IN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example"/>
+    <property name="java.runtime.version" value="1.7.0_65-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/cobertura/cobertura.ser"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.2.2/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.9.2"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/vaibhav.g"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="vaibhav.g"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.2.2/libexec/boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher cobertura:cobertura -Pmetrics"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_65"/>
+    <property name="java.ext.dirs" value="/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.2.2/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="project.build.outputDirectory" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/generated-classes/cobertura"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testRecoveryNoStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="5.578">
+    <error message="Instruction type does not match stack map&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3&#10;  Reason:&#10;    Type integer (current frame, locals[1]) is not assignable to &apos;java/util/Iterator&apos; (stack map, locals[1])&#10;  Current Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, integer, integer, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Stackmap Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200&#10;    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400&#10;    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402&#10;    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8&#10;    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000&#10;    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d&#10;    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190&#10;    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6&#10;    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012&#10;    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812&#10;    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12&#10;    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100&#10;    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b&#10;    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f&#10;    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8&#10;    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6&#10;    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8&#10;    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee&#10;    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b&#10;    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0&#10;    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213&#10;    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800&#10;    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904&#10;    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800&#10;    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11&#10;    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c&#10;    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055&#10;    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae&#10;    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9&#10;    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082&#10;    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8&#10;    00001f0: 0055 b1                                &#10;  Stackmap Table:&#10;    append_frame(@67,Object[#234])&#10;    chop_frame(@230,1)&#10;    append_frame(@284,Object[#234])&#10;    chop_frame(@432,1)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryNoStatus(TestAssignmentRecovery.java:225)
+</error>
+    <system-out><![CDATA[2014-12-18 10:47:51,915 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:47:51,927 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:47:52,017 - INFO  - [Standalone server with clientPort:11221:QuorumPeerConfig@101] - Reading configuration from: /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test1711628185621401383.junit.dir/zoo.cfg
+2014-12-18 10:47:52,018 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServerMain@95] - Starting server
+2014-12-18 10:47:52,234 - INFO  - [Thread-0:Environment@100] - Client environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+2014-12-18 10:47:52,234 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:zookeeper.version=3.4.5-1392090, built on 09/30/2012 17:52 GMT
+2014-12-18 10:47:52,235 - INFO  - [Thread-0:Environment@100] - Client environment:host.name=172.20.200.55
+2014-12-18 10:47:52,235 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:host.name=172.20.200.55
+2014-12-18 10:47:52,235 - INFO  - [Thread-0:Environment@100] - Client environment:java.version=1.7.0_65
+2014-12-18 10:47:52,236 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.version=1.7.0_65
+2014-12-18 10:47:52,236 - INFO  - [Thread-0:Environment@100] - Client environment:java.vendor=Oracle Corporation
+2014-12-18 10:47:52,237 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2014-12-18 10:47:52,237 - INFO  - [Thread-0:Environment@100] - Client environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre
+2014-12-18 10:47:52,237 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre
+2014-12-18 10:47:52,238 - INFO  - [Thread-0:Environment@100] - Client environment:java.class.path=/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/test-classes:/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/generated-classes/cobertura:/Users/vaibhav.g/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/Users/vaibhav.g/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vaibhav.g/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vaibhav.g/.m2/repository/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.jar:/Users/vaibhav.g/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/Users/vaibhav.g/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/Users/vaibhav.g/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/Users/vaibhav.g/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/vaibhav.g/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/Users/vaibhav.g/.m2/repository/org/jboss/netty/netty/3.2.2.Final/netty-3.2.2.Final.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/Users/vaibhav.g/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/Users/vaibhav.g/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/vaibhav.g/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:
+2014-12-18 10:47:52,239 - INFO  - [Thread-0:Environment@100] - Client environment:java.library.path=/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2014-12-18 10:47:52,240 - INFO  - [Thread-0:Environment@100] - Client environment:java.io.tmpdir=/var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/
+2014-12-18 10:47:52,240 - INFO  - [Thread-0:Environment@100] - Client environment:java.compiler=<NA>
+2014-12-18 10:47:52,241 - INFO  - [Thread-0:Environment@100] - Client environment:os.name=Mac OS X
+2014-12-18 10:47:52,241 - INFO  - [Thread-0:Environment@100] - Client environment:os.arch=x86_64
+2014-12-18 10:47:52,242 - INFO  - [Thread-0:Environment@100] - Client environment:os.version=10.9.2
+2014-12-18 10:47:52,242 - INFO  - [Thread-0:Environment@100] - Client environment:user.name=vaibhav.g
+2014-12-18 10:47:52,238 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.class.path=/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/test-classes:/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/generated-classes/cobertura:/Users/vaibhav.g/.m2/repository/org/slf4j/slf4j-api/1.7.1/slf4j-api-1.7.1.jar:/Users/vaibhav.g/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/vaibhav.g/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/vaibhav.g/.m2/repository/org/apache/zookeeper/zookeeper/3.4.5/zookeeper-3.4.5.jar:/Users/vaibhav.g/.m2/repository/org/slf4j/slf4j-log4j12/1.6.1/slf4j-log4j12-1.6.1.jar:/Users/vaibhav.g/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/Users/vaibhav.g/.m2/repository/javax/mail/mail/1.4/mail-1.4.jar:/Users/vaibhav.g/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/vaibhav.g/.m2/repository/jline/jline/0.9.94/jline-0.9.94.jar:/Users/vaibhav.g/.m2/repository/org/jboss/netty/netty/3.2.2.Final/netty-3.2.2.Final.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-recipes/2.1.0-incubating/curator-recipes-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-framework/2.1.0-incubating/curator-framework-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/org/apache/curator/curator-client/2.1.0-incubating/curator-client-2.1.0-incubating.jar:/Users/vaibhav.g/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar:/Users/vaibhav.g/.m2/repository/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar:/Users/vaibhav.g/.m2/repository/org/apache/ant/ant/1.7.0/ant-1.7.0.jar:/Users/vaibhav.g/.m2/repository/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar:
+2014-12-18 10:47:52,242 - INFO  - [Thread-0:Environment@100] - Client environment:user.home=/Users/vaibhav.g
+2014-12-18 10:47:52,243 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.library.path=/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2014-12-18 10:47:52,243 - INFO  - [Thread-0:Environment@100] - Client environment:user.dir=/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example
+2014-12-18 10:47:52,244 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.io.tmpdir=/var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/
+2014-12-18 10:47:52,245 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:java.compiler=<NA>
+2014-12-18 10:47:52,245 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.name=Mac OS X
+2014-12-18 10:47:52,246 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.arch=x86_64
+2014-12-18 10:47:52,246 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:os.version=10.9.2
+2014-12-18 10:47:52,246 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.name=vaibhav.g
+2014-12-18 10:47:52,247 - INFO  - [Thread-0:ZooKeeper@438] - Initiating client connection, connectString=localhost:11221 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$5@456c9182
+2014-12-18 10:47:52,247 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.home=/Users/vaibhav.g
+2014-12-18 10:47:52,248 - INFO  - [Standalone server with clientPort:11221:Environment@100] - Server environment:user.dir=/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example
+2014-12-18 10:47:52,260 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@726] - tickTime set to 2000
+2014-12-18 10:47:52,261 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@735] - minSessionTimeout set to -1
+2014-12-18 10:47:52,261 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@744] - maxSessionTimeout set to -1
+2014-12-18 10:47:52,278 - INFO  - [Standalone server with clientPort:11221:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:11221
+2014-12-18 10:47:52,296 - INFO  - [Standalone server with clientPort:11221:FileTxnSnapLog@240] - Snapshotting: 0x0 to /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test1711628185621401383.junit.dir/data/version-2/snapshot.0
+2014-12-18 10:47:57,345 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:47:57,348 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@849] - Socket connection established to fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221, initiating session
+2014-12-18 10:47:57,348 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@197] - Accepted socket connection from /fe80:0:0:0:0:0:0:1%1:56705
+2014-12-18 10:47:57,357 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:ZooKeeperServer@839] - Client attempting to establish new session at /fe80:0:0:0:0:0:0:1%1:56705
+2014-12-18 10:47:57,361 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2014-12-18 10:47:57,372 - INFO  - [SyncThread:0:ZooKeeperServer@595] - Established session 0x14a5bd4ad2f0000 with negotiated timeout 10000 for client /fe80:0:0:0:0:0:0:1%1:56705
+2014-12-18 10:47:57,373 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1207] - Session establishment complete on server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221, sessionid = 0x14a5bd4ad2f0000, negotiated timeout = 10000
+2014-12-18 10:47:57,376 - INFO  - [Thread-0-EventThread:TestAssignmentRecovery$5@196] - Event: WatchedEvent state:SyncConnected type:None path:null
+2014-12-18 10:47:57,446 - INFO  - [main:NIOServerCnxn@1001] - Closed socket connection for client /fe80:0:0:0:0:0:0:1%1:56705 which had sessionid 0x14a5bd4ad2f0000
+2014-12-18 10:47:57,447 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11221:NIOServerCnxnFactory@224] - NIOServerCnxn factory exited run method
+2014-12-18 10:47:57,447 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1085] - Unable to read additional data from server sessionid 0x14a5bd4ad2f0000, likely server has closed socket, closing socket connection and attempting reconnect
+2014-12-18 10:47:57,447 - INFO  - [Standalone server with clientPort:11221:ZooKeeperServer@419] - shutting down
+2014-12-18 10:47:57,447 - INFO  - [main:ZooKeeperServer@419] - shutting down
+2014-12-18 10:47:57,448 - INFO  - [Standalone server with clientPort:11221:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:47:57,449 - INFO  - [main:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:47:57,450 - INFO  - [Standalone server with clientPort:11221:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:47:57,450 - INFO  - [main:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:47:57,451 - INFO  - [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2014-12-18 10:47:57,451 - INFO  - [Standalone server with clientPort:11221:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:47:57,451 - INFO  - [main:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:47:57,452 - INFO  - [SyncThread:0:SyncRequestProcessor@155] - SyncRequestProcessor exited!
+2014-12-18 10:47:57,453 - INFO  - [main:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:47:57,453 - INFO  - [Standalone server with clientPort:11221:FinalRequestProcessor@415] - shutdown of request processor complete
+]]></system-out>
+  </testcase>
+  <testcase name="testRecoveryStatus" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="5.169">
+    <error message="Instruction type does not match stack map&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3&#10;  Reason:&#10;    Type integer (current frame, locals[1]) is not assignable to &apos;java/util/Iterator&apos; (stack map, locals[1])&#10;  Current Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, integer, integer, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Stackmap Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200&#10;    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400&#10;    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402&#10;    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8&#10;    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000&#10;    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d&#10;    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190&#10;    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6&#10;    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012&#10;    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812&#10;    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12&#10;    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100&#10;    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b&#10;    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f&#10;    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8&#10;    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6&#10;    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8&#10;    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee&#10;    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b&#10;    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0&#10;    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213&#10;    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800&#10;    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904&#10;    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800&#10;    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11&#10;    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c&#10;    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055&#10;    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae&#10;    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9&#10;    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082&#10;    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8&#10;    00001f0: 0055 b1                                &#10;  Stackmap Table:&#10;    append_frame(@67,Object[#234])&#10;    chop_frame(@230,1)&#10;    append_frame(@284,Object[#234])&#10;    chop_frame(@432,1)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryStatus(TestAssignmentRecovery.java:165)
+</error>
+    <system-out>2014-12-18 10:47:57,468 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2014-12-18 10:47:57,470 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:47:57,472 - WARN  - [Standalone server with clientPort:11222:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2014-12-18 10:47:57,474 - INFO  - [Standalone server with clientPort:11222:QuorumPeerConfig@101] - Reading configuration from: /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test5019232031910742684.junit.dir/zoo.cfg
+2014-12-18 10:47:57,474 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServerMain@95] - Starting server
+2014-12-18 10:47:57,474 - INFO  - [Thread-2:ZooKeeper@438] - Initiating client connection, connectString=localhost:11222 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$3@77cd6a5b
+2014-12-18 10:47:57,475 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@726] - tickTime set to 2000
+2014-12-18 10:47:57,476 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@735] - minSessionTimeout set to -1
+2014-12-18 10:47:57,476 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@744] - maxSessionTimeout set to -1
+2014-12-18 10:47:57,477 - INFO  - [Standalone server with clientPort:11222:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:11222
+2014-12-18 10:47:57,478 - INFO  - [Standalone server with clientPort:11222:FileTxnSnapLog@240] - Snapshotting: 0x0 to /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test5019232031910742684.junit.dir/data/version-2/snapshot.0
+2014-12-18 10:47:57,548 - INFO  - [Thread-0-EventThread:TestAssignmentRecovery$5@196] - Event: WatchedEvent state:Disconnected type:None path:null
+2014-12-18 10:47:57,674 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:47:57,675 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:47:58,001 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2014-12-18 10:47:58,206 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:47:58,206 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:00,134 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:00,135 - WARN  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:00,352 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:00,353 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:00,869 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:00,870 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,339 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,340 - WARN  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,546 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,547 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@849] - Socket connection established to fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11222, initiating session
+2014-12-18 10:48:02,547 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@197] - Accepted socket connection from /fe80:0:0:0:0:0:0:1%1:56714
+2014-12-18 10:48:02,548 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:ZooKeeperServer@839] - Client attempting to establish new session at /fe80:0:0:0:0:0:0:1%1:56714
+2014-12-18 10:48:02,548 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2014-12-18 10:48:02,549 - INFO  - [SyncThread:0:ZooKeeperServer@595] - Established session 0x14a5bd4c1670000 with negotiated timeout 10000 for client /fe80:0:0:0:0:0:0:1%1:56714
+2014-12-18 10:48:02,550 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@1207] - Session establishment complete on server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11222, sessionid = 0x14a5bd4c1670000, negotiated timeout = 10000
+2014-12-18 10:48:02,550 - INFO  - [Thread-2-EventThread:TestAssignmentRecovery$3@133] - Event: WatchedEvent state:SyncConnected type:None path:null
+2014-12-18 10:48:02,633 - INFO  - [main:NIOServerCnxn@1001] - Closed socket connection for client /fe80:0:0:0:0:0:0:1%1:56714 which had sessionid 0x14a5bd4c1670000
+2014-12-18 10:48:02,634 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@1085] - Unable to read additional data from server sessionid 0x14a5bd4c1670000, likely server has closed socket, closing socket connection and attempting reconnect
+2014-12-18 10:48:02,634 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11222:NIOServerCnxnFactory@224] - NIOServerCnxn factory exited run method
+2014-12-18 10:48:02,635 - INFO  - [Standalone server with clientPort:11222:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:02,635 - INFO  - [main:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:02,635 - INFO  - [Standalone server with clientPort:11222:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:02,636 - INFO  - [main:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:02,636 - INFO  - [Standalone server with clientPort:11222:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:02,636 - INFO  - [main:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:02,637 - INFO  - [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2014-12-18 10:48:02,637 - INFO  - [Standalone server with clientPort:11222:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:02,637 - INFO  - [main:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:02,638 - INFO  - [SyncThread:0:SyncRequestProcessor@155] - SyncRequestProcessor exited!
+2014-12-18 10:48:02,639 - INFO  - [main:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:48:02,639 - INFO  - [Standalone server with clientPort:11222:FinalRequestProcessor@415] - shutdown of request processor complete
+</system-out>
+  </testcase>
+  <testcase name="testRecovery" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="0.241">
+    <error message="Instruction type does not match stack map&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3&#10;  Reason:&#10;    Type integer (current frame, locals[1]) is not assignable to &apos;java/util/Iterator&apos; (stack map, locals[1])&#10;  Current Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, integer, integer, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Stackmap Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200&#10;    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400&#10;    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402&#10;    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8&#10;    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000&#10;    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d&#10;    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190&#10;    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6&#10;    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012&#10;    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812&#10;    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12&#10;    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100&#10;    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b&#10;    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f&#10;    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8&#10;    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6&#10;    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8&#10;    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee&#10;    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b&#10;    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0&#10;    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213&#10;    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800&#10;    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904&#10;    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800&#10;    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11&#10;    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c&#10;    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055&#10;    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae&#10;    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9&#10;    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082&#10;    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8&#10;    00001f0: 0055 b1                                &#10;  Stackmap Table:&#10;    append_frame(@67,Object[#234])&#10;    chop_frame(@230,1)&#10;    append_frame(@284,Object[#234])&#10;    chop_frame(@432,1)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecovery(TestAssignmentRecovery.java:99)
+</error>
+    <system-out>2014-12-18 10:48:02,642 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2014-12-18 10:48:02,649 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:02,650 - WARN  - [Standalone server with clientPort:11223:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2014-12-18 10:48:02,651 - INFO  - [Standalone server with clientPort:11223:QuorumPeerConfig@101] - Reading configuration from: /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test2451551871007887392.junit.dir/zoo.cfg
+2014-12-18 10:48:02,653 - INFO  - [Thread-3:ZooKeeper@438] - Initiating client connection, connectString=localhost:11223 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$1@7a3d8738
+2014-12-18 10:48:02,653 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServerMain@95] - Starting server
+2014-12-18 10:48:02,654 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@726] - tickTime set to 2000
+2014-12-18 10:48:02,655 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@735] - minSessionTimeout set to -1
+2014-12-18 10:48:02,655 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11223. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,655 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@744] - maxSessionTimeout set to -1
+2014-12-18 10:48:02,656 - WARN  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1089] - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,656 - INFO  - [Standalone server with clientPort:11223:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:11223
+2014-12-18 10:48:02,657 - INFO  - [Standalone server with clientPort:11223:FileTxnSnapLog@240] - Snapshotting: 0x0 to /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test2451551871007887392.junit.dir/data/version-2/snapshot.0
+2014-12-18 10:48:02,735 - INFO  - [Thread-2-EventThread:TestAssignmentRecovery$3@133] - Event: WatchedEvent state:Disconnected type:None path:null
+2014-12-18 10:48:02,757 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11223. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,757 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@849] - Socket connection established to localhost/0:0:0:0:0:0:0:1:11223, initiating session
+2014-12-18 10:48:02,757 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@197] - Accepted socket connection from /0:0:0:0:0:0:0:1:56716
+2014-12-18 10:48:02,758 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:ZooKeeperServer@839] - Client attempting to establish new session at /0:0:0:0:0:0:0:1:56716
+2014-12-18 10:48:02,759 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2014-12-18 10:48:02,761 - INFO  - [SyncThread:0:ZooKeeperServer@595] - Established session 0x14a5bd4d5a20000 with negotiated timeout 10000 for client /0:0:0:0:0:0:0:1:56716
+2014-12-18 10:48:02,761 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1207] - Session establishment complete on server localhost/0:0:0:0:0:0:0:1:11223, sessionid = 0x14a5bd4d5a20000, negotiated timeout = 10000
+2014-12-18 10:48:02,762 - INFO  - [Thread-3-EventThread:TestAssignmentRecovery$1@56] - Event: WatchedEvent state:SyncConnected type:None path:null
+2014-12-18 10:48:02,804 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,804 - WARN  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,874 - INFO  - [main:NIOServerCnxn@1001] - Closed socket connection for client /0:0:0:0:0:0:0:1:56716 which had sessionid 0x14a5bd4d5a20000
+2014-12-18 10:48:02,874 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11223:NIOServerCnxnFactory@224] - NIOServerCnxn factory exited run method
+2014-12-18 10:48:02,874 - INFO  - [Thread-3-SendThread(localhost:11223):ClientCnxn$SendThread@1085] - Unable to read additional data from server sessionid 0x14a5bd4d5a20000, likely server has closed socket, closing socket connection and attempting reconnect
+2014-12-18 10:48:02,875 - INFO  - [main:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:02,875 - INFO  - [Standalone server with clientPort:11223:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:02,876 - INFO  - [main:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:02,876 - INFO  - [Standalone server with clientPort:11223:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:02,876 - INFO  - [main:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:02,876 - INFO  - [Standalone server with clientPort:11223:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:02,877 - INFO  - [Standalone server with clientPort:11223:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:02,877 - INFO  - [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2014-12-18 10:48:02,877 - INFO  - [main:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:02,878 - INFO  - [SyncThread:0:SyncRequestProcessor@155] - SyncRequestProcessor exited!
+2014-12-18 10:48:02,879 - INFO  - [main:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:48:02,879 - INFO  - [Standalone server with clientPort:11223:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:48:02,880 - WARN  - [Standalone server with clientPort:11223:MBeanRegistry@117] - Failed to unregister MBean StandaloneServer_port-1
+2014-12-18 10:48:02,880 - WARN  - [Standalone server with clientPort:11223:MBeanRegistry@134] - Error during unregister
+javax.management.InstanceNotFoundException: org.apache.ZooKeeperService:name0=StandaloneServer_port-1
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546)
+	at org.apache.zookeeper.jmx.MBeanRegistry.unregister(MBeanRegistry.java:115)
+	at org.apache.zookeeper.jmx.MBeanRegistry.unregister(MBeanRegistry.java:132)
+	at org.apache.zookeeper.server.ZooKeeperServer.unregisterJMX(ZooKeeperServer.java:450)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:436)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:115)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:86)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+</system-out>
+  </testcase>
+  <testcase name="testRecoveryMissingTaskFromTasks" classname="org.apache.zookeeper.book.TestAssignmentRecovery" time="5.263">
+    <error message="Instruction type does not match stack map&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3&#10;  Reason:&#10;    Type integer (current frame, locals[1]) is not assignable to &apos;java/util/Iterator&apos; (stack map, locals[1])&#10;  Current Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, integer, integer, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Stackmap Frame:&#10;    bci: @67&#10;    flags: { }&#10;    locals: { &apos;org/apache/zookeeper/book/recovery/RecoveredAssignments&apos;, &apos;java/util/Iterator&apos; }&#10;    stack: { }&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200&#10;    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400&#10;    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402&#10;    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8&#10;    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000&#10;    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d&#10;    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190&#10;    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6&#10;    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012&#10;    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812&#10;    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12&#10;    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100&#10;    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b&#10;    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f&#10;    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8&#10;    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6&#10;    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8&#10;    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee&#10;    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b&#10;    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0&#10;    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213&#10;    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800&#10;    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904&#10;    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800&#10;    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11&#10;    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c&#10;    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055&#10;    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae&#10;    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9&#10;    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082&#10;    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8&#10;    00001f0: 0055 b1                                &#10;  Stackmap Table:&#10;    append_frame(@67,Object[#234])&#10;    chop_frame(@230,1)&#10;    append_frame(@284,Object[#234])&#10;    chop_frame(@432,1)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryMissingTaskFromTasks(TestAssignmentRecovery.java:286)
+</error>
+    <system-out>2014-12-18 10:48:02,883 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2014-12-18 10:48:02,884 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:02,884 - WARN  - [Standalone server with clientPort:11224:ZooKeeperServerMain@76] - Unable to register log4j JMX control
+javax.management.InstanceAlreadyExistsException: log4j:hiearchy=default
+	at com.sun.jmx.mbeanserver.Repository.addMBean(Repository.java:437)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerWithRepository(DefaultMBeanServerInterceptor.java:1898)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerDynamicMBean(DefaultMBeanServerInterceptor.java:966)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerObject(DefaultMBeanServerInterceptor.java:900)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:324)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
+	at org.apache.zookeeper.jmx.ManagedUtil.registerLog4jMBeans(ManagedUtil.java:53)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:74)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+2014-12-18 10:48:02,885 - INFO  - [Standalone server with clientPort:11224:QuorumPeerConfig@101] - Reading configuration from: /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test2345648594322688022.junit.dir/zoo.cfg
+2014-12-18 10:48:02,885 - INFO  - [Thread-4:ZooKeeper@438] - Initiating client connection, connectString=localhost:11224 sessionTimeout=10000 watcher=org.apache.zookeeper.book.TestAssignmentRecovery$7@7af485b
+2014-12-18 10:48:02,885 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServerMain@95] - Starting server
+2014-12-18 10:48:02,886 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@726] - tickTime set to 2000
+2014-12-18 10:48:02,886 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@735] - minSessionTimeout set to -1
+2014-12-18 10:48:02,886 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@744] - maxSessionTimeout set to -1
+2014-12-18 10:48:02,886 - INFO  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11224. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,887 - INFO  - [Standalone server with clientPort:11224:NIOServerCnxnFactory@94] - binding to port 0.0.0.0/0.0.0.0:11224
+2014-12-18 10:48:02,887 - WARN  - [Thread-4-SendThread(localhost:11224):ClientCnxn$SendThread@1089] - Session 0x0 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,888 - INFO  - [Standalone server with clientPort:11224:FileTxnSnapLog@240] - Snapshotting: 0x0 to /var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/test2345648594322688022.junit.dir/data/version-2/snapshot.0
+2014-12-18 10:48:02,919 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:02,920 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:02,976 - INFO  - [Thread-3-EventThread:TestAssignmentRecovery$1@56] - Event: WatchedEvent state:Disconnected type:None path:null
+2014-12-18 10:48:03,009 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:03,010 - WARN  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:03,141 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:03,141 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:04,001 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2014-12-18 10:48:04,001 - INFO  - [SessionTracker:SessionTrackerImpl@162] - SessionTrackerImpl exited loop!
+2014-12-18 10:48:04,692 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:04,692 - WARN  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:04,829 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:04,830 - WARN  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:05,220 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:05,221 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:05,707 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/0:0:0:0:0:0:0:1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:05,707 - WARN  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:06,029 - INFO  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:06,030 - WARN  - [Thread-0-SendThread(localhost:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:06,314 - INFO  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@966] - Opening socket connection to server localhost/127.0.0.1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:06,314 - WARN  - [Thread-2-SendThread(localhost:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:08,009 - INFO  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11221. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:08,010 - WARN  - [Thread-0-SendThread(fe80:0:0:0:0:0:0:1%1:11221):ClientCnxn$SendThread@1089] - Session 0x14a5bd4ad2f0000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:08,057 - INFO  - [Thread-4-SendThread(fe80:0:0:0:0:0:0:1%1:11224):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11224. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:08,057 - INFO  - [Thread-4-SendThread(fe80:0:0:0:0:0:0:1%1:11224):ClientCnxn$SendThread@849] - Socket connection established to fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11224, initiating session
+2014-12-18 10:48:08,058 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@197] - Accepted socket connection from /fe80:0:0:0:0:0:0:1%1:56730
+2014-12-18 10:48:08,058 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:ZooKeeperServer@839] - Client attempting to establish new session at /fe80:0:0:0:0:0:0:1%1:56730
+2014-12-18 10:48:08,058 - INFO  - [SyncThread:0:FileTxnLog@199] - Creating new log file: log.1
+2014-12-18 10:48:08,060 - INFO  - [SyncThread:0:ZooKeeperServer@595] - Established session 0x14a5bd4d6890000 with negotiated timeout 10000 for client /fe80:0:0:0:0:0:0:1%1:56730
+2014-12-18 10:48:08,060 - INFO  - [Thread-4-SendThread(fe80:0:0:0:0:0:0:1%1:11224):ClientCnxn$SendThread@1207] - Session establishment complete on server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11224, sessionid = 0x14a5bd4d6890000, negotiated timeout = 10000
+2014-12-18 10:48:08,060 - INFO  - [Thread-4-EventThread:TestAssignmentRecovery$7@259] - Event: WatchedEvent state:SyncConnected type:None path:null
+2014-12-18 10:48:08,111 - INFO  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@966] - Opening socket connection to server fe80:0:0:0:0:0:0:1%1/fe80:0:0:0:0:0:0:1%1:11222. Will not attempt to authenticate using SASL (unknown error)
+2014-12-18 10:48:08,111 - WARN  - [Thread-2-SendThread(fe80:0:0:0:0:0:0:1%1:11222):ClientCnxn$SendThread@1089] - Session 0x14a5bd4c1670000 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.ConnectException: Connection refused
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:739)
+	at org.apache.zookeeper.ClientCnxnSocketNIO.doTransport(ClientCnxnSocketNIO.java:350)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1068)
+2014-12-18 10:48:08,139 - INFO  - [main:NIOServerCnxn@1001] - Closed socket connection for client /fe80:0:0:0:0:0:0:1%1:56730 which had sessionid 0x14a5bd4d6890000
+2014-12-18 10:48:08,139 - INFO  - [Thread-4-SendThread(fe80:0:0:0:0:0:0:1%1:11224):ClientCnxn$SendThread@1085] - Unable to read additional data from server sessionid 0x14a5bd4d6890000, likely server has closed socket, closing socket connection and attempting reconnect
+2014-12-18 10:48:08,140 - INFO  - [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:11224:NIOServerCnxnFactory@224] - NIOServerCnxn factory exited run method
+2014-12-18 10:48:08,140 - INFO  - [Standalone server with clientPort:11224:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:08,140 - INFO  - [main:ZooKeeperServer@419] - shutting down
+2014-12-18 10:48:08,140 - INFO  - [Standalone server with clientPort:11224:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:08,141 - INFO  - [main:SessionTrackerImpl@225] - Shutting down
+2014-12-18 10:48:08,141 - INFO  - [Standalone server with clientPort:11224:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:08,141 - INFO  - [main:PrepRequestProcessor@743] - Shutting down
+2014-12-18 10:48:08,142 - INFO  - [ProcessThread(sid:0 cport:-1)::PrepRequestProcessor@143] - PrepRequestProcessor exited loop!
+2014-12-18 10:48:08,142 - INFO  - [Standalone server with clientPort:11224:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:08,142 - INFO  - [main:SyncRequestProcessor@175] - Shutting down
+2014-12-18 10:48:08,142 - INFO  - [SyncThread:0:SyncRequestProcessor@155] - SyncRequestProcessor exited!
+2014-12-18 10:48:08,143 - INFO  - [main:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:48:08,143 - INFO  - [Standalone server with clientPort:11224:FinalRequestProcessor@415] - shutdown of request processor complete
+2014-12-18 10:48:08,144 - WARN  - [Standalone server with clientPort:11224:MBeanRegistry@117] - Failed to unregister MBean StandaloneServer_port-1
+2014-12-18 10:48:08,144 - WARN  - [Standalone server with clientPort:11224:MBeanRegistry@134] - Error during unregister
+javax.management.InstanceNotFoundException: org.apache.ZooKeeperService:name0=StandaloneServer_port-1
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(DefaultMBeanServerInterceptor.java:1095)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.exclusiveUnregisterMBean(DefaultMBeanServerInterceptor.java:427)
+	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.unregisterMBean(DefaultMBeanServerInterceptor.java:415)
+	at com.sun.jmx.mbeanserver.JmxMBeanServer.unregisterMBean(JmxMBeanServer.java:546)
+	at org.apache.zookeeper.jmx.MBeanRegistry.unregister(MBeanRegistry.java:115)
+	at org.apache.zookeeper.jmx.MBeanRegistry.unregister(MBeanRegistry.java:132)
+	at org.apache.zookeeper.server.ZooKeeperServer.unregisterJMX(ZooKeeperServer.java:450)
+	at org.apache.zookeeper.server.ZooKeeperServer.shutdown(ZooKeeperServer.java:436)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.runFromConfig(ZooKeeperServerMain.java:115)
+	at org.apache.zookeeper.server.ZooKeeperServerMain.initializeAndRun(ZooKeeperServerMain.java:86)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.initializeAndRun(StandaloneServer.java:51)
+	at org.apache.zookeeper.book.StandaloneServer.run(StandaloneServer.java:97)
+</system-out>
+  </testcase>
+</testsuite>

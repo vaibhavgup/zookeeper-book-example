@@ -1,0 +1,82 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.book.TestWorkerChanges
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.251 sec <<< FAILURE!
+addWorker(org.apache.zookeeper.book.TestWorkerChanges)  Time elapsed: 0.048 sec  <<< ERROR!
+java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/Master.main([Ljava/lang/String;)V @45: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'org/apache/zookeeper/book/Master' (stack map, locals[1])
+  Current Frame:
+    bci: @45
+    flags: { }
+    locals: { '[Ljava/lang/String;', integer, integer, 'org/apache/zookeeper/book/Master' }
+    stack: { }
+  Stackmap Frame:
+    bci: @45
+    flags: { }
+    locals: { '[Ljava/lang/String;', 'org/apache/zookeeper/book/Master' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 1284 1103 32b8 008a bb00
+    0000010: 0259 2a03 32b7 01d8 4e12 8411 0333 b800
+    0000020: 8a2d b601 da12 8411 0335 b800 8a2d b601
+    0000030: dc11 0335 3c11 0000 3d9a 002e 1b11 0335
+    0000040: a000 161c 1100 00a0 000f 1284 1b1c 04b8
+    0000050: 011c 11ff ff3d 1284 1103 36b8 008a 1401
+    0000060: ddb8 01e3 a7ff c11c 9b00 0f12 841b 1c03
+    0000070: b801 1c11 ffff 3d12 8411 033b b800 8a2d
+    0000080: b601 e512 8411 0340 b800 8a2d b601 e712
+    0000090: 8411 0342 b800 8a2d b601 e911 0342 3c11
+    00000a0: 0000 3d9a 002e 1b11 0342 a000 161c 1100
+    00000b0: 00a0 000f 1284 1b1c 04b8 011c 11ff ff3d
+    00000c0: 1284 1103 43b8 008a 1401 eab8 01e3 a7ff
+    00000d0: c11c 9b00 0f12 841b 1c03 b801 1c11 ffff
+    00000e0: 3d12 8411 0346 b800 8a2d b601 ed12 8411
+    00000f0: 0347 b800 8ab1                         
+  Stackmap Table:
+    append_frame(@45,Object[#2])
+    same_frame_extended(@127)
+    same_frame(@151)
+    same_frame_extended(@233)
+
+	at org.apache.zookeeper.book.TestWorkerChanges.addWorker(TestWorkerChanges.java:32)
+
+addWorker(org.apache.zookeeper.book.TestWorkerChanges)  Time elapsed: 0.052 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at org.apache.zookeeper.server.ZooKeeperServerMain.shutdown(ZooKeeperServerMain.java:127)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.shutdown(StandaloneServer.java:54)
+	at org.apache.zookeeper.book.StandaloneServer.shutdown(StandaloneServer.java:105)
+	at org.apache.zookeeper.book.BaseTestCase.tearDown(BaseTestCase.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+

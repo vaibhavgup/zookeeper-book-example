@@ -1,0 +1,236 @@
+-------------------------------------------------------------------------------
+Test set: org.apache.zookeeper.book.TestAssignmentRecovery
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 16.464 sec <<< FAILURE!
+testRecoveryNoStatus(org.apache.zookeeper.book.TestAssignmentRecovery)  Time elapsed: 5.578 sec  <<< ERROR!
+java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryNoStatus(TestAssignmentRecovery.java:225)
+
+testRecoveryStatus(org.apache.zookeeper.book.TestAssignmentRecovery)  Time elapsed: 5.169 sec  <<< ERROR!
+java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryStatus(TestAssignmentRecovery.java:165)
+
+testRecovery(org.apache.zookeeper.book.TestAssignmentRecovery)  Time elapsed: 0.241 sec  <<< ERROR!
+java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecovery(TestAssignmentRecovery.java:99)
+
+testRecoveryMissingTaskFromTasks(org.apache.zookeeper.book.TestAssignmentRecovery)  Time elapsed: 5.263 sec  <<< ERROR!
+java.lang.VerifyError: Instruction type does not match stack map
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/recovery/RecoveredAssignments.processAssignments()V @67: aload_3
+  Reason:
+    Type integer (current frame, locals[1]) is not assignable to 'java/util/Iterator' (stack map, locals[1])
+  Current Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', integer, integer, 'java/util/Iterator' }
+    stack: { }
+  Stackmap Frame:
+    bci: @67
+    flags: { }
+    locals: { 'org/apache/zookeeper/book/recovery/RecoveredAssignments', 'java/util/Iterator' }
+    stack: { }
+  Bytecode:
+    0000000: 033c 11ff ff3d 124f 1101 8db8 0055 b200
+    0000010: d2bb 00a7 59b7 00a8 12d4 b600 ae2a b400
+    0000020: d6b9 00dc 0100 b600 dfb6 00b4 b900 e402
+    0000030: 0012 4f11 018f b800 552a b400 79b9 00e8
+    0000040: 0100 4e2d b900 ee01 0011 018f 3c11 0000
+    0000050: 3d99 007d 124f 1b1c 04b8 00f2 11ff ff3d
+    0000060: 2db9 00f6 0100 c000 f83a 0412 4f11 0190
+    0000070: b800 55b2 00d2 bb00 a759 b700 a812 fab6
+    0000080: 00ae 1904 b600 aeb6 00b4 b900 e402 0012
+    0000090: 4f11 0191 b800 552a bb00 a759 b700 a812
+    00000a0: aab6 00ae 1904 b600 aeb6 00b4 b600 fc12
+    00000b0: 4f11 0192 b800 552a b400 d619 04b9 0100
+    00000c0: 0200 5712 4f11 0193 b800 55a7 ff78 1c9b
+    00000d0: 000f 124f 1b1c 03b8 00f2 11ff ff3d 124f
+    00000e0: 1101 95b8 0055 b200 d2bb 00a7 59b7 00a8
+    00000f0: 1301 02b6 00ae 2ab4 00d6 b900 dc01 00b6
+    0000100: 00df b600 b4b9 00e4 0200 124f 1101 97b8
+    0000110: 0055 2ab4 0104 b900 e801 004e 2db9 00ee
+    0000120: 0100 1101 973c 1100 003d 9900 6e12 4f1b
+    0000130: 1c04 b800 f211 ffff 3d2d b900 f601 00c0
+    0000140: 00f8 3a04 124f 1101 98b8 0055 b200 d213
+    0000150: 0106 1904 b901 0903 0012 4f11 0199 b800
+    0000160: 552a bb00 a759 b700 a812 aab6 00ae 1904
+    0000170: b600 aeb6 00b4 b600 fc12 4f11 019a b800
+    0000180: 552a b400 d619 04b9 0100 0200 5712 4f11
+    0000190: 019b b800 55a7 ff87 1c9b 000f 124f 1b1c
+    00001a0: 03b8 00f2 11ff ff3d 124f 1101 9cb8 0055
+    00001b0: b200 d2bb 00a7 59b7 00a8 1301 0bb6 00ae
+    00001c0: 2ab4 00d6 b900 dc01 00b6 00df b600 b4b9
+    00001d0: 00e4 0200 124f 1101 9fb8 0055 2ab4 0082
+    00001e0: 032a b400 d6b9 010f 0300 124f 1101 a0b8
+    00001f0: 0055 b1                                
+  Stackmap Table:
+    append_frame(@67,Object[#234])
+    chop_frame(@230,1)
+    append_frame(@284,Object[#234])
+    chop_frame(@432,1)
+
+	at org.apache.zookeeper.book.TestAssignmentRecovery.testRecoveryMissingTaskFromTasks(TestAssignmentRecovery.java:286)
+

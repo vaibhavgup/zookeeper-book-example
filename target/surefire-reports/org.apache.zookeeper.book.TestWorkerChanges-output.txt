@@ -1,0 +1,2 @@
+2014-12-18 10:48:10,389 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:48:10,399 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started

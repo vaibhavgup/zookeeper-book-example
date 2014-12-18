@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.zookeeper.book.TestCuratorMaster" time="0.164" tests="8" errors="8" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="24.65-b04"/>
+    <property name="user.country.format" value="IN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example"/>
+    <property name="java.runtime.version" value="1.7.0_65-b17"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/qy/2h3r1_zj6xzcn7qwb4qp1k70zr_0g0/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/cobertura/cobertura.ser"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.2.2/libexec/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.9.2"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/vaibhav.g"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="vaibhav.g"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.2.2/libexec/boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="info"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher cobertura:cobertura -Pmetrics"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_65"/>
+    <property name="java.ext.dirs" value="/Users/vaibhav.g/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.2.2/libexec"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="project.build.outputDirectory" value="/Users/vaibhav.g/flipkart/zookeeper/zookeeper-book-example/target/generated-classes/cobertura"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testTaskAssignment" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.055">
+    <error message="Expecting a stackmap frame at branch target 86&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00&#10;    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808&#10;    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d&#10;    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12&#10;    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0&#10;    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12&#10;    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901&#10;    0000070: d103 0012 3811 01d1 b800 3eb1          &#10;  Exception Handler Table:&#10;    bci [6, 75] =&gt; handler: 86&#10;  Stackmap Table:&#10;    same_locals_1_stack_item_extended(@94,Object[#173])&#10;    same_frame(@123)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 86
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00
+    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808
+    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d
+    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12
+    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0
+    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12
+    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901
+    0000070: d103 0012 3811 01d1 b800 3eb1          
+  Exception Handler Table:
+    bci [6, 75] => handler: 86
+  Stackmap Table:
+    same_locals_1_stack_item_extended(@94,Object[#173])
+    same_frame(@123)
+
+	at org.apache.zookeeper.book.TestCuratorMaster.testTaskAssignment(TestCuratorMaster.java:26)
+</error>
+    <system-out>2014-12-18 10:48:08,897 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:48:08,907 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,909 - INFO  - [Thread-0:TestCuratorMaster@25] - Starting master (taskAssignment)
+</system-out>
+  </testcase>
+  <testcase name="testTaskAssignment" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.057">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.apache.zookeeper.server.ZooKeeperServerMain.shutdown(ZooKeeperServerMain.java:127)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.shutdown(StandaloneServer.java:54)
+	at org.apache.zookeeper.book.StandaloneServer.shutdown(StandaloneServer.java:105)
+	at org.apache.zookeeper.book.BaseTestCase.tearDown(BaseTestCase.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+</error>
+  </testcase>
+  <testcase name="testTaskAssignmentLatch" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.008">
+    <error message="Expecting a stackmap frame at branch target 86&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/curator/CuratorMasterLatch.main([Ljava/lang/String;)V @6: ldc&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 1236 1101 a1b8 003c bb00&#10;    0000010: 0259 2a03 322a 0432 bb01 a159 1103 e808&#10;    0000020: b701 a4b7 01a6 4e12 3611 01a3 b800 3c2d&#10;    0000030: b601 a812 3611 01a4 b800 3c2d b601 aa12&#10;    0000040: 3611 01a5 b800 3c2d b601 ac12 3611 01a8&#10;    0000050: b800 3ca7 0020 1236 1101 a6b8 003c 4e12&#10;    0000060: 3611 01a7 b800 3cb2 0063 1301 ae2d b900&#10;    0000070: f203 0012 3611 01a9 b800 3cb1          &#10;  Exception Handler Table:&#10;    bci [6, 75] =&gt; handler: 86&#10;  Stackmap Table:&#10;    same_locals_1_stack_item_extended(@94,Object[#167])&#10;    same_frame(@123)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 86
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/curator/CuratorMasterLatch.main([Ljava/lang/String;)V @6: ldc
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033c 11ff ff3d 1236 1101 a1b8 003c bb00
+    0000010: 0259 2a03 322a 0432 bb01 a159 1103 e808
+    0000020: b701 a4b7 01a6 4e12 3611 01a3 b800 3c2d
+    0000030: b601 a812 3611 01a4 b800 3c2d b601 aa12
+    0000040: 3611 01a5 b800 3c2d b601 ac12 3611 01a8
+    0000050: b800 3ca7 0020 1236 1101 a6b8 003c 4e12
+    0000060: 3611 01a7 b800 3cb2 0063 1301 ae2d b900
+    0000070: f203 0012 3611 01a9 b800 3cb1          
+  Exception Handler Table:
+    bci [6, 75] => handler: 86
+  Stackmap Table:
+    same_locals_1_stack_item_extended(@94,Object[#167])
+    same_frame(@123)
+
+	at org.apache.zookeeper.book.TestCuratorMaster.testTaskAssignmentLatch(TestCuratorMaster.java:217)
+</error>
+    <system-out>2014-12-18 10:48:08,939 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2014-12-18 10:48:08,941 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,942 - INFO  - [Thread-2:TestCuratorMaster@216] - Starting master (taskAssignment)
+</system-out>
+  </testcase>
+  <testcase name="testTaskAssignmentLatch" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.01">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.apache.zookeeper.server.ZooKeeperServerMain.shutdown(ZooKeeperServerMain.java:127)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.shutdown(StandaloneServer.java:54)
+	at org.apache.zookeeper.book.StandaloneServer.shutdown(StandaloneServer.java:105)
+	at org.apache.zookeeper.book.BaseTestCase.tearDown(BaseTestCase.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+</error>
+  </testcase>
+  <testcase name="testZooKeeperRestart" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.007">
+    <error message="Expecting a stackmap frame at branch target 86&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00&#10;    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808&#10;    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d&#10;    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12&#10;    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0&#10;    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12&#10;    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901&#10;    0000070: d103 0012 3811 01d1 b800 3eb1          &#10;  Exception Handler Table:&#10;    bci [6, 75] =&gt; handler: 86&#10;  Stackmap Table:&#10;    same_locals_1_stack_item_extended(@94,Object[#173])&#10;    same_frame(@123)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 86
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00
+    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808
+    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d
+    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12
+    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0
+    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12
+    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901
+    0000070: d103 0012 3811 01d1 b800 3eb1          
+  Exception Handler Table:
+    bci [6, 75] => handler: 86
+  Stackmap Table:
+    same_locals_1_stack_item_extended(@94,Object[#173])
+    same_frame(@123)
+
+	at org.apache.zookeeper.book.TestCuratorMaster.testZooKeeperRestart(TestCuratorMaster.java:96)
+</error>
+    <system-out>2014-12-18 10:48:08,950 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2014-12-18 10:48:08,952 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,954 - INFO  - [Thread-3:TestCuratorMaster@95] - Starting zookeeper restart
+</system-out>
+  </testcase>
+  <testcase name="testZooKeeperRestart" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.009">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.apache.zookeeper.server.ZooKeeperServerMain.shutdown(ZooKeeperServerMain.java:127)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.shutdown(StandaloneServer.java:54)
+	at org.apache.zookeeper.book.StandaloneServer.shutdown(StandaloneServer.java:105)
+	at org.apache.zookeeper.book.BaseTestCase.tearDown(BaseTestCase.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+</error>
+  </testcase>
+  <testcase name="electSingleMaster" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.008">
+    <error message="Expecting a stackmap frame at branch target 86&#10;Exception Details:&#10;  Location:&#10;    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc&#10;  Reason:&#10;    Expected stackmap frame at this location.&#10;  Bytecode:&#10;    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00&#10;    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808&#10;    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d&#10;    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12&#10;    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0&#10;    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12&#10;    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901&#10;    0000070: d103 0012 3811 01d1 b800 3eb1          &#10;  Exception Handler Table:&#10;    bci [6, 75] =&gt; handler: 86&#10;  Stackmap Table:&#10;    same_locals_1_stack_item_extended(@94,Object[#173])&#10;    same_frame(@123)&#10;" type="java.lang.VerifyError">java.lang.VerifyError: Expecting a stackmap frame at branch target 86
+Exception Details:
+  Location:
+    org/apache/zookeeper/book/curator/CuratorMasterSelector.main([Ljava/lang/String;)V @6: ldc
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 033c 11ff ff3d 1238 1101 c9b8 003e bb00
+    0000010: 0259 2a03 322a 0432 bb01 c159 1103 e808
+    0000020: b701 c4b7 01c6 4e12 3811 01cb b800 3e2d
+    0000030: b601 c812 3811 01cc b800 3e2d b601 ca12
+    0000040: 3811 01cd b800 3e2d b601 cc12 3811 01d0
+    0000050: b800 3ea7 0020 1238 1101 ceb8 003e 4e12
+    0000060: 3811 01cf b800 3eb2 0069 1301 ce2d b901
+    0000070: d103 0012 3811 01d1 b800 3eb1          
+  Exception Handler Table:
+    bci [6, 75] => handler: 86
+  Stackmap Table:
+    same_locals_1_stack_item_extended(@94,Object[#173])
+    same_frame(@123)
+
+	at org.apache.zookeeper.book.TestCuratorMaster.electSingleMaster(TestCuratorMaster.java:186)
+</error>
+    <system-out>2014-12-18 10:48:08,960 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2014-12-18 10:48:08,963 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,965 - INFO  - [Thread-4:TestCuratorMaster@185] - Starting single master test
+</system-out>
+  </testcase>
+  <testcase name="electSingleMaster" classname="org.apache.zookeeper.book.TestCuratorMaster" time="0.01">
+    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
+	at org.apache.zookeeper.server.ZooKeeperServerMain.shutdown(ZooKeeperServerMain.java:127)
+	at org.apache.zookeeper.book.StandaloneServer$TestZKSMain.shutdown(StandaloneServer.java:54)
+	at org.apache.zookeeper.book.StandaloneServer.shutdown(StandaloneServer.java:105)
+	at org.apache.zookeeper.book.BaseTestCase.tearDown(BaseTestCase.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:208)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:158)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:86)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:95)
+</error>
+  </testcase>
+</testsuite>

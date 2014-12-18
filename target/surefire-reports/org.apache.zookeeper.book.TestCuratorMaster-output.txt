@@ -1,0 +1,12 @@
+2014-12-18 10:48:08,897 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:48:08,907 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,909 - INFO  - [Thread-0:TestCuratorMaster@25] - Starting master (taskAssignment)
+2014-12-18 10:48:08,939 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2014-12-18 10:48:08,941 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,942 - INFO  - [Thread-2:TestCuratorMaster@216] - Starting master (taskAssignment)
+2014-12-18 10:48:08,950 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2014-12-18 10:48:08,952 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,954 - INFO  - [Thread-3:TestCuratorMaster@95] - Starting zookeeper restart
+2014-12-18 10:48:08,960 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2014-12-18 10:48:08,963 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:08,965 - INFO  - [Thread-4:TestCuratorMaster@185] - Starting single master test

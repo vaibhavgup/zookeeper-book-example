@@ -1,0 +1,8 @@
+2014-12-18 10:48:09,400 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11221
+2014-12-18 10:48:09,411 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,441 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11222
+2014-12-18 10:48:09,444 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,451 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11223
+2014-12-18 10:48:09,454 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
+2014-12-18 10:48:09,462 - INFO  - [main:BaseTestCase@51] - Starting ZooKeeper Standalone Server: 11224
+2014-12-18 10:48:09,465 - INFO  - [main:BaseTestCase@54] - ZooKeeper server started
